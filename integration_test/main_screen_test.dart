@@ -4,7 +4,9 @@ import 'package:integration_test/integration_test.dart';
 import 'package:task_management_redux/main.dart' as app;
 
 void main() async {
+
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+  
   group("Test Main Screen Integration", () {
     testWidgets("Test Main Screen add a new task", (WidgetTester tester) async {
       app.main();
