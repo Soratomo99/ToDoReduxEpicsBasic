@@ -56,6 +56,7 @@ class TodoApp extends StatelessWidget {
                                   return ListTile(
                                     title: Text(tasks[index].title ?? ""),
                                     trailing: Checkbox(
+                                      key: const Key("check box of the task"),
                                         value: tasks[index].isDone == 1
                                             ? true
                                             : false,
@@ -95,6 +96,7 @@ class ButtonShowAddTask extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      key: const Key("Button show add task"),
       onTap: () {
         showCupertinoModalPopup(
             context: context,
@@ -143,7 +145,7 @@ class _FormFieldWidgetState extends State<FormFieldWidget> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   TextField(
-                    key: const Key("TextField content of the new task"),
+                    key: const Key("TextField"),
                     onChanged: (newValue) {
                       value = newValue;
                     },
@@ -159,7 +161,7 @@ class _FormFieldWidgetState extends State<FormFieldWidget> {
                     ),
                   ),
                   GestureDetector(
-                    key: const Key("Button add new task"),
+                    key: const Key("Button create"),
                     onTap: () async {
                       viewModel.doAction(
                           action: DoCreateTask.create(newTask: value));
